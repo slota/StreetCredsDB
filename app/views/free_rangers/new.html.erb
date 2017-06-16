@@ -1,0 +1,21 @@
+Enter new ranger information
+<hr>
+<%= form_for @free_ranger do |f| %>
+  First Name:<%= f.text_field :first_name%><br>
+  Last Name:<%= f.text_field :last_name%><br>
+  Description:<%= f.text_field :description%><br>
+  Image URL:<%= f.text_field :image_url%><br>
+  <%= f.submit %>
+<% end %>
+
+<hr>
+Display all rangers
+<%  if !@free_rangers.blank? %>
+  <% for ranger in @free_rangers %>
+    <%= ranger.image_url %><br>
+    <%= ranger.first_name %>
+    <%= ranger.last_name %><br>
+    <%= ranger.description %><br><br>
+  <% end %>
+<% else %>
+<% end %>
